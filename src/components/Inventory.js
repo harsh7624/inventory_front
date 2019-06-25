@@ -39,7 +39,7 @@ class Inventory extends React.Component {
                     pid: event.target.id
                    
                 })
-            })
+            }).then()
           
          //const { id } = props;
          //console.log(id);

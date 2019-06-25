@@ -49,8 +49,9 @@ function section( props ) {
 
 class ViewInventory extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        console.log(this.props,'props')
         this.state = {
           data: [],
           quantity: 0,
@@ -78,14 +79,6 @@ class ViewInventory extends React.Component {
              console.log(data.rows);
              this.setState({data : data.rows});
              
-             /*return (
-             <table >
-             <tbody>
-                 { data.rows.map( pid =>
-                 section( pid )
-                 ) }
-             </tbody>
-             </table>)*/
           })
         //console.log(this.state);
         
@@ -93,6 +86,8 @@ class ViewInventory extends React.Component {
 
     approveInv = () => {
         console.log('assistant');
+
+
     }
 
     confirmInv = () => {

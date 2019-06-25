@@ -31,7 +31,9 @@ class Signin extends React.Component {
           .then(response => response.json())
           .then(data => {
               if(data.email){
+                  this.checkRole();
                   this.props.onRouteChange('home');
+
               }
           })
         //console.log(this.state);
@@ -52,6 +54,8 @@ class Signin extends React.Component {
           .then(data => {
               console.log('inside checkROLE')
               this.setState({role: data})
+              this.props.onUpdateRole(data);
+              console.log(data)
           })
     }
 
@@ -86,7 +90,7 @@ class Signin extends React.Component {
                      // onClick={this.onSubmitSignIn}
                       onClick={() => {
                        this.onSubmitSignIn();
-                       // this.checkRole();
+                       //this.checkRole();
                      }}
                       type="submit"
                       value="Sign in"
